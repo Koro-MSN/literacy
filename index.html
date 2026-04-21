@@ -6,14 +6,39 @@
     <title>TEST</title>
 </head>
 <body>
-    <h1 class="title">Hello World!!</h1>
+    <h1 id="title">Hello World!!</h1>
 </body>
 <style>
-    .title{
+    #title{
         font-size:50px;
         position:fixed;
         top:calc(50% - 50px);
         left:calc(50% - 50px);
     }
 </style>
+<script>
+    var red = 255
+    var green = 0
+    var blue = 0
+    var time = 0
+    const countup = setInterval(() => {
+        time++
+        if(time <= 255){
+            red=(255-time)
+            green=time
+        }
+        else if(time > 255 && time <= 510){
+            green=(510-time)
+            blue=(time-255)
+        }
+        else if(time > 510 && time <= 765){
+            blue=(765-time)
+            red=(time-510)
+        }
+        else if(time>765){
+            time=0
+        }
+        document.getElementById("title").style.color=`rgb(${red},${green},${blue})`
+    }, 1)
+</script>
 </html>
