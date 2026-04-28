@@ -22,7 +22,7 @@
     var blue = 0
     var time = 0
     const countup = setInterval(() => {
-        time++
+        time++//変数:時間を増やす
         if(time <= 255){
             red=(255-time)
             green=time
@@ -36,9 +36,9 @@
             red=(time-510)
         }
         else if(time>765){
-            time=0
-        }
-        document.getElementById("title").style.color=`rgb(${red},${green},${blue})`
+            time=0//変数:時間をリセット
+        }//変数:時間ごとに変化させる色を変更
+        document.getElementById("title").style.color=`rgb(${red},${green},${blue})`/*テキストの配色を書き換える*/
     }, 1)
 </script>
 </html>
